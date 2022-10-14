@@ -1,0 +1,345 @@
+@import 'config';
+@import 'utilities';
+@import 'item_grid';
+
+// General Styles
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: $light-color;
+}
+
+ul {
+  list-style: none;
+}
+
+h2,h3,h4 {
+  text-transform: uppercase;
+}
+img {
+  width: 100%;
+}
+#main-nav{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.75rem;
+    
+    .logo{
+        width: 50px;
+        height: 50px;
+    }
+    ul{
+        display: flex;
+    }
+    li{
+        padding: 0.75rem 1rem;
+    }
+    a{
+        border-bottom: 3px transparent solid;
+        padding-bottom: 0.5rem;
+        transition: border-color 0.5s ease-in-out;
+        
+        &:hover{
+            cursor: pointer;
+            border-color: $medium-color;
+        }
+        &.current{
+            border-color: $main-color;
+        }
+    }
+}
+// Header
+#header {
+  // Header Home
+  &-home {
+    background: $bg-image no-repeat center center/ cover;
+    height: 100vh;
+    color: $light-color;
+    
+    .header-content{
+      padding-top: 20%;
+      
+      h1{
+        font-size: 4rem;
+      }
+    }
+  }
+    &-about{
+      background: $bg-image no-repeat 20% 30% / cover;
+      height: 70px;
+      border-bottom: 3px $main-color solid;
+    }
+  }
+  #home{
+    &-a{
+      color: $dark-color;
+
+    .specialize{
+        margin-top: 2rem;
+        display: grid; 
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1rem;
+        
+        i{
+          color: $main-color;
+          padding-bottom: 0.4rem;
+        }
+      }
+    }
+    &-b{   
+      .box{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        
+        div{
+          height: 150px;
+          padding-top: 20%;
+
+        &:nth-child(odd){
+          background: $light-color;
+        }
+        &:nth-child(even){
+          background: $medium-color;
+        }
+      }
+      }
+    }
+    &-c{
+      color: $dark-color;
+
+      .process{
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1rem;
+
+        &-step{
+          background: $main-color;
+          color:  set-text-color($main-color);
+          font-size: 28px;
+          border-radius: 50%;
+          padding: 1rem;
+          height: 15px;
+          width: 15px;
+          position: absolute;
+          top: 0rem;
+          right: 0rem;
+          transition: all 1s;
+          line-height: 15px;
+        }
+
+        i{
+          position: relative;
+          width: 70px;
+          height: 70px;
+          z-index: -1;
+          padding: 2rem;
+          margin-bottom: 1rem;
+          line-height: 70px;
+          background: $dark-color;
+          color: set-text-color($dark-color);
+          border-radius: 50%;
+          transition: all 1s;
+          
+          &:hover{
+            background: $main-color;
+            width: 0px;
+            height: 90px;
+            line-height: 90px;
+
+            .process-step{
+              background: $dark-color;
+              color: set-text-color($dark-color);
+            }
+          }
+        }
+      }
+    }
+  }
+  #footer{
+    &-main{
+      background: $dark-color;
+      color:  set-text-color($dark-color);
+      height: 5rem;
+      
+      .footer-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 5rem;
+
+        .social i{
+          border: 2px $light-color solid;
+          border-radius: 50%;
+          padding: 0.5rem;
+          height: 10px;
+          width: 10px;
+          transition: all 0.5s;
+          line-height: 10px;
+          font-size: 12px;
+          margin: 0 0.25rem;
+
+          &:hover{
+            background: $main-color;
+          }
+        }
+      }
+    }
+  }
+  #about{
+    &-a{
+      .about-content{
+        display: grid;
+        grid-template-areas: 'image info info'
+        'aw1 aw2 aw3';
+        grid-gap: 1rem;
+        padding: 0 10%;
+      }
+        .about-image{
+          grid-area: image;
+        }
+        .about-info{
+          grid-area: info;
+          background: $light-color;
+          border-left: 3px $main-color solid;
+          margin-left: 1rem;
+          padding: 1rem;
+        }
+        .aw1{
+          grid-area: aw1;
+        }
+        .aw2{
+          grid-area: aw2;
+        }
+        .aw3{
+          grid-area: aw3;
+        }
+        
+        i{
+          color: $main-color;
+          margin: 1rem;
+        }
+      }
+      &-b{
+        background: $dark-color;
+        color: set-text-color($dark-color);
+  
+        .skills{
+          overflow: hidden;
+          height: 1.5rem;
+          background: $medium-color;
+          margin: 0.75rem 0;
+          border-radius: 5px;
+  
+          div{
+            color: $light-color;
+            background: $main-color;
+            text-align: center;
+            height: 100%;
+          }
+        }
+      }
+      &-c{
+        .logo{
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          grid-gap: 0.5rem;
+          background: $light-color;
+  
+          img{
+            width: 200px;
+          }
+        }
+      }
+      &-d{
+        .comments{
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          grid-gap: 1rem;
+  
+          p{
+            border: 1px $medium-color solid;
+            border-radius: 5px;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+          }
+          ul{
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            align-items: center;
+            
+            img{
+              width: 60px;
+              height: 60px;
+              border-radius: 50%;
+              margin-right: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+
+  #contact{
+    &-a{
+      .text-field{
+        display: grid;
+        grid-template-areas: 
+        'name email'
+        'subject phone'
+        'message message';
+        grid-gap: 1rem;
+        margin-bottom: 1rem;
+        
+        .name-input{
+          grid-area: name;
+        }
+        .email-input{
+          grid-area: email;
+        }
+        .subject-input{
+          grid-area: subject;
+        }
+        .phone-input{
+          grid-area: phone;
+        }
+        .message-input{
+          grid-area: message;
+          height: 100px;
+        }
+        .text-input{
+          padding: 0.5rem;
+          border: 1px $medium-color solid;
+        }
+      }
+      .btn-dark{
+        width: 60%;
+      }
+    }
+    
+    &-b{
+      background: $dark-color;
+      color: set-text-color($dark-color);
+      
+      .contact-info{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        text-align: center;
+        align-items: center;
+      }
+    }
+    &-c{
+      background: $main-color;
+      color: set-text-color($main-color);
+    }
+  }
+  @import 'media';

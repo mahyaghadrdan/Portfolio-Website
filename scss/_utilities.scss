@@ -1,0 +1,73 @@
+.container{
+    max-width: $website-width;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 1rem;
+}
+.section-title{
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+    font-weight: 100;
+    display: block;
+    text-align: center;
+}
+.lead{
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+}
+.text-center{
+    text-align: center;
+}
+%btn-shared{
+    display: inline-block;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    color: $dark-color;
+    background: $light-color;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.btn{
+    &-main{
+        @extend %btn-shared;
+        color: $dark-color;
+        background: $medium-color;
+    }
+    &-light{
+        @extend %btn-shared;
+        color: $dark-color;
+        background: $light-color;
+    }
+    &-dark{
+        @extend %btn-shared;
+        color: $light-color;
+        background: $dark-color;
+    }
+}
+
+button[class^='btn-']:hover,
+a[class^='btn-']:hover,
+input[class^='btn-']:hover {
+    background-color: $main-color;
+}
+
+.py{
+    &-1{ 
+        padding: 1rem 0;
+    }
+    &-2{ 
+        padding: 2rem 0;
+    }
+    &-3{ 
+        padding: 3rem 0;
+    }
+    &-4{ 
+        padding: 4rem 0;
+    }
+}  
+.bottom-line{
+    border-bottom: 3px $main-color solid;
+    width: 4.5%;
+    margin: 0 auto 1rem auto;
+}
